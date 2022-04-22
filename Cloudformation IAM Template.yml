@@ -1,0 +1,39 @@
+
+Resources:
+  myUserA:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: Kehinde.pm # give a name to this user
+      LoginProfile: # specify a password for this user
+        Password: Kehinde@de
+        PasswordResetRequired: Yes # make this user to set a new password on next sign-in
+      Path: '/'
+      ManagedPolicyArns: # list of ARNs of IAM managed policies that you want to attach to the user
+        - arn:aws:iam::aws:policy/IAMUserChangePassword # Provides the ability for an IAM user to change their own password
+        - arn:aws:iam::aws:policy/AdministratorAccess # Provides full access to AWS services and resources
+     
+  myUserB:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: Kehinde.devops # give a name to this user
+      LoginProfile: # specify a password for this user
+        Password: Kehinde@de
+        PasswordResetRequired: Yes # make this user to set a new password on next sign-in
+      Path: '/'
+      ManagedPolicyArns: # list of ARNs of IAM managed policies that you want to attach to the user
+        - arn:aws:iam::aws:policy/IAMUserChangePassword # Provides the ability for an IAM user to change their own password
+        - arn:aws:iam::aws:policy/AmazonEC2FullAccess # Provides full access to Amazon EC2 via the AWS Management Console
+      
+     
+  myUserC:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: Kehinde.intern # give a name to this user
+      LoginProfile: # specify a password for this user
+        Password: Kehinde@de
+        PasswordResetRequired: Yes # make this user to set a new password on next sign-in
+      Path: '/'
+      ManagedPolicyArns: # list of ARNs of IAM managed policies that you want to attach to the user
+        - arn:aws:iam::aws:policy/IAMUserChangePassword # Provides the ability for an IAM user to change their own password
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess # Provides read only access to all buckets via the AWS Management Console
+      
